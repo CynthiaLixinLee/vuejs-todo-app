@@ -18,8 +18,5 @@ new Vue({
       this.todos.push({ title: this.newTodo, completed: 'false', id: this.todos.length });
       this.newTodo = '';
     },
-    removeTodo(todo){
-      this.todos.splice(this.todos.indexOf(todo),1)
-    }
   },
 });

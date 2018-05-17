@@ -17,11 +17,11 @@
     </header>
     <section class="main">
       <ul class="todo-list">
-        <li v-for="todo in todos" class="todo">
+        <li v-for="todo in todo-list" :class="todo">
           <div class="view">
             <input class="toggle" type="checkbox" v-model="todo.completed" />
             <label>{{ todo.title }}</label>
-            <button class="destroy" @click="removeTodo(todo)"></button>
+            <button class="destroy"></button>
           </div>
         </li>
       </ul>
@@ -50,7 +50,7 @@
     </p>
   </footer>
 
-  <script src="src/main.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>
