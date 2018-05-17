@@ -17,12 +17,13 @@
     </header>
     <section class="main">
       <ul class="todo-list">
-        <li v-for="todo in todos" class="todo">
+        <li v-for="todo in filteredTodos" :class="{completed: todo.completed, editing: todo == editedTodo}">
           <div class="view">
             <input class="toggle" type="checkbox" v-model="todo.completed" />
-            <label>{{ todo.title }}</label>
+            <label @dblclick="editTodo(todo)">{{ todo.title }}</label>
             <button class="destroy" @click="removeTodo(todo)"></button>
           </div>
+          <input type="text" class="edit" v-model="todo.title" @blur="doneEdit(todo)" @keyup.enter="doneEdit(todo)" />
         </li>
       </ul>
       <input class="toggle-all" id="toggle-all" type="checkbox">
