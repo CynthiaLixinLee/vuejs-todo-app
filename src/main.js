@@ -36,7 +36,7 @@ new Vue({
   },
   methods: {
     addTodo() {
-      this.todos.push({ title: this.newTodo, completed: 'false', id: this.todos.length });
+      this.todos.push({ title: this.newTodo, completed: false, id: this.todos.length });
       this.newTodo = '';
       saveToStorage(this.todos);
     },
